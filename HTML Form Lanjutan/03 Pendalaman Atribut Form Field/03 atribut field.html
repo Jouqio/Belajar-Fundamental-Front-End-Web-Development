@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>03 - Pendalaman Atribut Form Field</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #1f2937; }
+  .field { margin-bottom: 16px; }
+  label { display: block; font-weight: 600; margin-bottom: 4px; font-size: .9rem; }
+  input { padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; width: 100%; box-sizing: border-box; }
+  small { color: #6b7280; }
+</style>
+</head>
+<body>
+  <h1>Demo Atribut Field</h1>
+  <form>
+    <div class="field">
+      <label for="invoice">Invoice (readonly, tetap terkirim)</label>
+      <input type="text" id="invoice" name="invoice" value="INV-2026-001" readonly>
+    </div>
+    <div class="field">
+      <label for="status">Status (disabled, TIDAK terkirim)</label>
+      <input type="text" id="status" name="status" value="Draft" disabled>
+    </div>
+    <div class="field">
+      <label for="kodepos">Kode Pos (pattern 5 digit)</label>
+      <input type="text" id="kodepos" name="kodepos" pattern="[0-9]{5}" title="Masukkan 5 digit angka" required>
+      <small>Coba isi huruf atau kurang dari 5 digit lalu submit.</small>
+    </div>
+    <div class="field">
+      <label for="tiket">Jumlah Tiket (min/max/step)</label>
+      <input type="number" id="tiket" name="tiket" min="1" max="10" step="1" value="1">
+    </div>
+    <div class="field">
+      <label for="nama">Nama (autofocus + maxlength)</label>
+      <input type="text" id="nama" name="nama" autofocus maxlength="20">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
