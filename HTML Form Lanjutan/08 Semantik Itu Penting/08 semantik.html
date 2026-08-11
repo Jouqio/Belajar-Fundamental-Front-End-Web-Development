@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>08 - Semantik Itu Penting</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 500px; margin: 40px auto; padding: 0 16px; color: #1f2937; }
+  fieldset { margin-bottom: 20px; border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; }
+  legend { font-weight: 700; padding: 0 8px; }
+  label { display: block; margin-top: 10px; font-weight: 600; font-size: .9rem; }
+  input { padding: 8px 10px; margin-top: 4px; border: 1px solid #d1d5db; border-radius: 6px; width: 100%; box-sizing: border-box; }
+  input[aria-invalid="true"] { border-color: #ef4444; }
+  small { color: #6b7280; display: block; margin-top: 2px; }
+  [role="alert"] { color: #ef4444; font-size: .85rem; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+</style>
+</head>
+<body>
+  <h1>Form Ber-Semantik</h1>
+  <form>
+    <fieldset>
+      <legend>Informasi Akun</legend>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required
+             aria-describedby="username-help">
+      <small id="username-help">Minimal 4 karakter, tanpa spasi</small>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required
+             aria-describedby="password-help">
+      <small id="password-help">Minimal 8 karakter, kombinasi huruf & angka</small>
+
+      <label for="email2">Email</label>
+      <input type="email" id="email2" name="email" required
+             aria-invalid="true" aria-describedby="email-error">
+      <span id="email-error" role="alert">Format email tidak valid</span>
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferensi Notifikasi</legend>
+      <label><input type="checkbox" name="notif" value="email"> Email</label>
+      <label><input type="checkbox" name="notif" value="sms"> SMS</label>
+    </fieldset>
+
+    <label for="cari" class="sr-only">Cari sesuatu</label>
+    <input type="search" id="cari" aria-label="Cari sesuatu" placeholder="🔍 Cari...">
+
+    <button type="submit" style="margin-top:16px; padding:10px 18px; background:#3b82f6; color:white; border:none; border-radius:6px; cursor:pointer;">Daftar</button>
+  </form>
+</body>
+</html>
