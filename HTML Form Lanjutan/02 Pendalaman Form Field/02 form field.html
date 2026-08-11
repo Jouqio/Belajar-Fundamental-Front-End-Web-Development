@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>02 - Pendalaman Form Field</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #1f2937; }
+  .field { margin-bottom: 16px; }
+  label { display: block; font-weight: 600; margin-bottom: 4px; font-size: .9rem; }
+  input, select { padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; width: 100%; box-sizing: border-box; }
+  input[type="checkbox"], input[type="radio"] { width: auto; }
+  .row { display: flex; gap: 8px; align-items: center; }
+</style>
+</head>
+<body>
+  <h1>Demo Semua Tipe Input</h1>
+  <form>
+    <div class="field"><label for="f1">text</label><input type="text" id="f1" placeholder="Nama"></div>
+    <div class="field"><label for="f2">email</label><input type="email" id="f2" placeholder="user@mail.com"></div>
+    <div class="field"><label for="f3">password</label><input type="password" id="f3"></div>
+    <div class="field"><label for="f4">number</label><input type="number" id="f4" min="0" max="10"></div>
+    <div class="field"><label for="f5">tel</label><input type="tel" id="f5" placeholder="0812xxxxxxx"></div>
+    <div class="field"><label for="f6">url</label><input type="url" id="f6" placeholder="https://..."></div>
+    <div class="field"><label for="f7">search</label><input type="search" id="f7"></div>
+    <div class="field"><label for="f8">date</label><input type="date" id="f8"></div>
+    <div class="field"><label for="f9">time</label><input type="time" id="f9"></div>
+    <div class="field"><label for="f10">datetime-local</label><input type="datetime-local" id="f10"></div>
+    <div class="field"><label for="f11">month</label><input type="month" id="f11"></div>
+    <div class="field"><label for="f12">week</label><input type="week" id="f12"></div>
+    <div class="field"><label for="f13">color</label><input type="color" id="f13" value="#00aa88"></div>
+    <div class="field"><label for="f14">range</label><input type="range" id="f14" min="0" max="100"></div>
+    <div class="field"><label for="f15">file</label><input type="file" id="f15" accept="image/*"></div>
+    <div class="field">
+      <label>checkbox (bisa pilih banyak)</label>
+      <div class="row"><input type="checkbox" id="c1"><label for="c1" style="margin:0">Membaca</label></div>
+      <div class="row"><input type="checkbox" id="c2"><label for="c2" style="margin:0">Coding</label></div>
+    </div>
+    <div class="field">
+      <label>radio (pilih satu)</label>
+      <div class="row"><input type="radio" name="gender" id="r1"><label for="r1" style="margin:0">Laki-laki</label></div>
+      <div class="row"><input type="radio" name="gender" id="r2"><label for="r2" style="margin:0">Perempuan</label></div>
+    </div>
+  </form>
+</body>
+</html>
