@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>10 - Club Finder App (Starter/Kerangka)</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #1f2937; }
+  .search-bar { display: flex; gap: 8px; margin-bottom: 12px; }
+  .search-bar input { flex: 1; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; }
+  .search-bar button { padding: 10px 16px; background: #3b82f6; color: white; border: none; border-radius: 8px; cursor: pointer; }
+  .filters { display: flex; gap: 12px; margin-bottom: 20px; }
+  .filters select { flex: 1; padding: 8px; border: 1px solid #d1d5db; border-radius: 8px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+</style>
+</head>
+<body>
+  <h1>🔍 Club Finder App <small style="font-weight:400;color:#6b7280;">(kerangka awal)</small></h1>
+
+  <form id="search-form" role="search">
+    <div class="search-bar">
+      <label for="keyword" class="sr-only">Cari klub</label>
+      <input
+        type="search"
+        id="keyword"
+        name="keyword"
+        placeholder="Cari nama klub..."
+        list="club-suggestions"
+        autocomplete="off">
+      <datalist id="club-suggestions">
+        <option value="Klub Coding Bontang">
+        <option value="Klub Lari Pagi">
+        <option value="Klub Baca Buku">
+      </datalist>
+      <button type="submit">Cari</button>
+    </div>
+
+    <div class="filters">
+      <div style="flex:1">
+        <label for="kategori">Kategori</label>
+        <select id="kategori" name="kategori">
+          <option value="">Semua</option>
+          <option value="olahraga">Olahraga</option>
+          <option value="teknologi">Teknologi</option>
+          <option value="seni">Seni</option>
+        </select>
+      </div>
+      <div style="flex:1">
+        <label for="kota">Kota</label>
+        <select id="kota" name="kota">
+          <option value="">Semua</option>
+          <option value="bontang">Bontang</option>
+          <option value="balikpapan">Balikpapan</option>
+          <option value="samarinda">Samarinda</option>
+        </select>
+      </div>
+    </div>
+  </form>
+
+  <ul id="hasil-pencarian" aria-live="polite" style="list-style:none; padding:0;">
+    <li>👉 Ini baru kerangka. Buka <code>11-club-finder-app.html</code> untuk versi lengkap dengan logika pencarian.</li>
+  </ul>
+</body>
+</html>
