@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>05 - Auto Completion</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 500px; margin: 40px auto; padding: 0 16px; color: #1f2937; }
+  .field { margin-bottom: 16px; }
+  label { display: block; font-weight: 600; margin-bottom: 4px; font-size: .9rem; }
+  input { padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; width: 100%; box-sizing: border-box; }
+  small { color: #6b7280; }
+</style>
+</head>
+<body>
+  <h1>Form Alamat Pengiriman (autofill browser)</h1>
+  <p><small>Coba isi form ini dan simpan lewat browser, lalu buka ulang — browser akan menyarankan autofill.</small></p>
+  <form autocomplete="on">
+    <div class="field">
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" name="name" autocomplete="name">
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email">
+    </div>
+    <div class="field">
+      <label for="telp">No. Telepon</label>
+      <input type="tel" id="telp" name="tel" autocomplete="tel">
+    </div>
+    <div class="field">
+      <label for="alamat">Alamat</label>
+      <input type="text" id="alamat" name="street-address" autocomplete="street-address">
+    </div>
+    <div class="field">
+      <label for="kota">Kota</label>
+      <input type="text" id="kota" name="city" autocomplete="address-level2" list="daftar-kampus">
+      <datalist id="daftar-kampus">
+        <option value="Bontang">
+        <option value="Balikpapan">
+        <option value="Samarinda">
+      </datalist>
+    </div>
+    <div class="field">
+      <label for="kodepos">Kode Pos</label>
+      <input type="text" id="kodepos" name="postal-code" autocomplete="postal-code">
+    </div>
+    <div class="field">
+      <label for="otp">Kode OTP (autocomplete dimatikan khusus)</label>
+      <input type="text" id="otp" name="otp" autocomplete="one-time-code" inputmode="numeric">
+    </div>
+    <button type="submit">Kirim</button>
+  </form>
+</body>
+</html>
