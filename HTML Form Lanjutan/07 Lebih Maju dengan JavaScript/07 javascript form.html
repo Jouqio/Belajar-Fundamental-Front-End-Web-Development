@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>07 - Lebih Maju dengan JavaScript</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 500px; margin: 40px auto; padding: 0 16px; color: #1f2937; }
+  .field { margin-bottom: 14px; }
+  label { display: block; font-weight: 600; margin-bottom: 4px; font-size: .9rem; }
+  input { padding: 8px 10px; border: 1px solid #d1d5db; border-radius: 6px; width: 100%; box-sizing: border-box; margin-bottom: 6px; }
+  button { padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; }
+  #tambah { background: #e5e7eb; margin-bottom: 16px; }
+  button[type="submit"] { background: #3b82f6; color: white; width: 100%; padding: 10px; font-weight: 600; }
+  button[type="submit"]:disabled { background: #9ca3af; cursor: not-allowed; }
+  pre { background: #f3f4f6; padding: 12px; border-radius: 8px; font-size: .85rem; overflow-x: auto; }
+</style>
+</head>
+<body>
+  <h1>Demo Fitur JavaScript pada Form</h1>
+  <form id="myForm">
+    <div class="field">
+      <label for="nama">Nama</label>
+      <input type="text" id="nama" name="nama" required>
+    </div>
+
+    <div class="field">
+      <label>Hobi (bisa tambah baris)</label>
+      <div id="daftar-hobi">
+        <input type="text" name="hobi[]" placeholder="Hobi 1">
+      </div>
+      <button type="button" id="tambah">+ Tambah Hobi</button>
+    </div>
+
+    <button type="submit" id="submitBtn">Kirim Data</button>
+  </form>
+
+  <h3>Hasil FormData:</h3>
+  <pre id="output">Belum ada data dikirim.</pre>
+
+<script>
+document.getElementById('tambah').addEventListener('click', () => {
+  const container = document.getElementById('daftar-hobi');
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.name = 'hobi[]';
+  input.placeholder = `Hobi ${container.children.length + 1}`;
+  container.appendChild(input);
+});
+
+const form = document.getElementById('myForm');
+const submitBtn = document.getElementById('submitBtn');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Mengirim...';
+
+  const formData = new FormData(form);
+  const hobiList = formData.getAll('hobi[]').filter(h => h.trim() !== '');
+  const data = { nama: formData.get('nama'), hobi: hobiList };
+
+  // Simulasi proses async (misalnya fetch ke server)
+  setTimeout(() => {
+    document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Kirim Data';
+  }, 800);
+});
+</script>
+</body>
+</html>
