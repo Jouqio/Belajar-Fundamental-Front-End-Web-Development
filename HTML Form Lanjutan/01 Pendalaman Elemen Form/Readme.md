@@ -90,6 +90,6 @@ Menampilkan hasil kalkulasi dari input (biasanya dikombinasikan dengan JavaScrip
 ```
 
 ## Latihan Singkat
-Buat form pendaftaran webinar yang memakai minimal: `fieldset`, `select` dengan `optgroup`, `textarea`, dan `datalist`. Coba lihat contohnya di `examples/01-elemen-form.html`.
+Buat form pendaftaran webinar yang memakai minimal: `fieldset`, `select` dengan `optgroup`, `textarea`, dan `datalist`. coba lihat contohnya di `examples/01-elemen-form.html`.
 
 ➡️ Lanjut ke: `02-Pendalaman-Form-Field.md`
