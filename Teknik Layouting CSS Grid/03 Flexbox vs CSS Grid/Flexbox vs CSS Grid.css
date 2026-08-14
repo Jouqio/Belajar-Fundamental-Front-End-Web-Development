@@ -1,0 +1,35 @@
+  body { font-family: sans-serif; padding: 20px; }
+  h3 { margin-top: 30px; }
+
+  /* Contoh Flexbox */
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    background: #ffe0b2;
+    padding: 10px;
+  }
+  .flex-container div {
+    background: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+
+  /* Contoh Grid */
+  .grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px 1fr 60px;
+    gap: 8px;
+    height: 300px;
+    background: #c8e6c9;
+    padding: 10px;
+  }
+  .grid-container div {
+    background: #4caf50;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+  }
