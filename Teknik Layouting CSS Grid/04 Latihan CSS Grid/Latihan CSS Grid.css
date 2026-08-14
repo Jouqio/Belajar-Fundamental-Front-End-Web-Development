@@ -1,0 +1,12 @@
+  body { font-family: sans-serif; }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .container div {
+    background: coral;
+    padding: 16px;
+    color: white;
+    text-align: center;
+  }
