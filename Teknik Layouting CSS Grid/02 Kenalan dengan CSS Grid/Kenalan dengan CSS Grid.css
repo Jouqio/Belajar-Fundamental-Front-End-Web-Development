@@ -1,0 +1,15 @@
+  body { font-family: sans-serif; }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    background: #eee;
+    padding: 12px;
+  }
+  .grid-container div {
+    background: #4c8bf5;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+  }
