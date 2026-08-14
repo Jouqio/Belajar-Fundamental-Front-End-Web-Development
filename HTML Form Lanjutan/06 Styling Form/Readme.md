@@ -1,6 +1,6 @@
 # 6. Styling Form
 
-Form yang fungsional saja tidak cukup — tampilan yang rapi meningkatkan kepercayaan dan kenyamanan pengguna.
+Form yang fungsional saja tidak cukup tampilan yang rapi meningkatkan kepercayaan dan kenyamanan pengguna.
 
 ## Reset Dasar
 Elemen form punya style bawaan browser yang berbeda-beda. Mulai dengan reset ringan:
