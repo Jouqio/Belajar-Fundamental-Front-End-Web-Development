@@ -1,0 +1,8 @@
+
+  body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #1f2937; }
+  .search-bar { display: flex; gap: 8px; margin-bottom: 12px; }
+  .search-bar input { flex: 1; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 8px; }
+  .search-bar button { padding: 10px 16px; background: #3b82f6; color: white; border: none; border-radius: 8px; cursor: pointer; }
+  .filters { display: flex; gap: 12px; margin-bottom: 20px; }
+  .filters select { flex: 1; padding: 8px; border: 1px solid #d1d5db; border-radius: 8px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }

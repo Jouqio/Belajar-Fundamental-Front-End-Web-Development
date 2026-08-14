@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>11 - Club Finder App (Lengkap)</title>
-<style>
+
   * { box-sizing: border-box; }
   body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #1f2937; background: #f9fafb; }
   h1 { font-size: 1.4rem; }
@@ -24,57 +19,3 @@
   .badge { background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 999px; font-size: .75rem; text-transform: capitalize; }
   .lokasi { color: #6b7280; font-size: .85rem; }
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
-</style>
-</head>
-<body>
-  <h1>🔍 Club Finder App</h1>
-  <div class="card">
-    <form id="search-form" role="search">
-      <div class="search-bar">
-        <label for="keyword" class="sr-only">Cari klub</label>
-        <input
-          type="search"
-          id="keyword"
-          name="keyword"
-          placeholder="Cari nama klub... (misal: 'klub')"
-          list="club-suggestions"
-          autocomplete="off">
-        <datalist id="club-suggestions">
-          <option value="Klub Coding Bontang">
-          <option value="Klub Lari Pagi">
-          <option value="Klub Baca Buku">
-          <option value="Komunitas Web Developer Kaltim">
-        </datalist>
-        <button type="submit">Cari</button>
-      </div>
-      <span id="hint"></span>
-
-      <div class="filters">
-        <div>
-          <label for="kategori">Kategori</label>
-          <select id="kategori" name="kategori">
-            <option value="">Semua</option>
-            <option value="olahraga">Olahraga</option>
-            <option value="teknologi">Teknologi</option>
-            <option value="seni">Seni</option>
-          </select>
-        </div>
-        <div>
-          <label for="kota">Kota</label>
-          <select id="kota" name="kota">
-            <option value="">Semua</option>
-            <option value="bontang">Bontang</option>
-            <option value="balikpapan">Balikpapan</option>
-            <option value="samarinda">Samarinda</option>
-          </select>
-        </div>
-      </div>
-      <button type="button" id="reset-btn">Reset Filter</button>
-    </form>
-
-    <ul id="hasil-pencarian" aria-live="polite"></ul>
-  </div>
-
-<script src="11 club finder app.js"></script>
-</body>
-</html>
