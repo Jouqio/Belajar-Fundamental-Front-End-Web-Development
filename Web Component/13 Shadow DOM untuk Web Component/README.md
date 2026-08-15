@@ -1,6 +1,6 @@
 # Modul 13: Shadow DOM untuk Web Component
 
-Modul ini menyatukan **Custom Element** (Modul 3-9) dengan **Shadow DOM** (Modul 10-12) menjadi komponen yang benar-benar encapsulated — inilah bentuk "Web Component" yang sesungguhnya.
+Modul ini menyatukan **Custom Element** (Modul 3-9) dengan **Shadow DOM** (Modul 10-12) menjadi komponen yang benar-benar encapsulated inilah bentuk "Web Component" yang sesungguhnya.
 
 ## Pola Umum Membuat Web Component dengan Shadow DOM
 ```js

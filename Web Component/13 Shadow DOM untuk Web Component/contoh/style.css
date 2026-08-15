@@ -1,0 +1,2 @@
+  body { font-family: sans-serif; padding: 20px; display: flex; gap: 12px; }
+  .card { border: 5px solid red; } /* sengaja beda untuk buktikan tidak bentrok */
