@@ -1,6 +1,6 @@
 # Modul 18: Studi Kasus — Bangun Komponen pada Club Film
 
-Praktik nyata: membangun komponen `<film-card>` yang reusable untuk website "Club Film", menggabungkan **semua** materi yang sudah dipelajari — Custom Element, Shadow DOM, Slot, Template, dan Custom Attribute.
+Praktik nyata: membangun komponen `<film-card>` yang reusable untuk website "Club Film", menggabungkan **semua** materi yang sudah dipelajari Custom Element, Shadow DOM, Slot, Template, dan Custom Attribute.
 
 ## Fitur Komponen yang Akan Dibangun
 - Menerima atribut `title`, `year`, dan `rating`.
