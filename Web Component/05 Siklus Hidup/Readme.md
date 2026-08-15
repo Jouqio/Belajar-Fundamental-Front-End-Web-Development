@@ -69,4 +69,4 @@ customElements.define('lifecycle-demo', LifecycleDemo);
 Buka file contoh, lalu buka **Console** di DevTools. Klik tombol "Hapus Elemen" untuk melihat `disconnectedCallback` terpanggil secara langsung.
 
 ## Kenapa Ini Penting?
-Memahami siklus hidup membantu kamu tahu **kapan** waktu yang tepat untuk mengambil data, menambahkan event listener, atau membersihkan resource — mirip konsep `useEffect` di React atau `mounted`/`unmounted` di Vue, tapi ini native browser API.
+Memahami siklus hidup membantu kamu tahu **kapan** waktu yang tepat untuk mengambil data, menambahkan event listener, atau membersihkan resource mirip konsep `useEffect` di React atau `mounted`/`unmounted` di Vue, tapi ini native browser API.
