@@ -41,7 +41,7 @@ customElements.define('fancy-button', FancyButton, { extends: 'button' });
 > Catatan: dukungan browser untuk customized built-in element tidak seluas autonomous element (Safari belum mendukung penuh), jadi autonomous element lebih disarankan untuk pemula.
 
 ## Proses "Render" pada Custom Element
-Berbeda dari framework seperti React yang punya virtual DOM, Custom Element **merender dirinya sendiri secara manual** — biasanya lewat `this.innerHTML` atau manipulasi DOM langsung di dalam lifecycle callback.
+Berbeda dari framework seperti React yang punya virtual DOM, Custom Element **merender dirinya sendiri secara manual** — biasanya lewat `this.innerHTML` atau manipulasi DOM langsung di dalam lifecycle callback
 
 ```js
 class UserCard extends HTMLElement {
