@@ -1,4 +1,4 @@
-# Modul 3: Latihan — Menulis Custom Element Pertama
+# Modul 3: Latihan Menulis Custom Element Pertama
 
 Saatnya praktik langsung membuat Custom Element pertamamu! Buka `contoh/index.html` di browser.
 
