@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Handling Custom Attribute</title>
-<style>
-  body { font-family: sans-serif; padding: 20px; }
-  button { padding: 8px 16px; margin-top: 10px; }
-</style>
-</head>
-<body>
-  <h2>User Card dari Atribut</h2>
-  <user-card name="Rina" age="25"></user-card>
-
-  <h2>Counter dengan attributeChangedCallback</h2>
-  <my-counter count="0" id="counter"></my-counter>
-  <button onclick="document.getElementById('counter').setAttribute('count', 5)">
-    Ubah ke 5
-  </button>
-
-  <script>
     class UserCard extends HTMLElement {
       connectedCallback() {
         const nama = this.getAttribute('name');
@@ -43,6 +22,3 @@
       }
     }
     customElements.define('my-counter', Counter);
-  </script>
-</body>
-</html>

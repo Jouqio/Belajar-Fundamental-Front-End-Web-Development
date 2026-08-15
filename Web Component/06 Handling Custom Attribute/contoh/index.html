@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Handling Custom Attribute</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>User Card dari Atribut</h2>
+  <user-card name="Rina" age="25"></user-card>
+
+  <h2>Counter dengan attributeChangedCallback</h2>
+  <my-counter count="0" id="counter"></my-counter>
+  <button onclick="document.getElementById('counter').setAttribute('count', 5)">
+    Ubah ke 5
+  </button>
+<script src="main.js"></script>
+</body>
+</html>
