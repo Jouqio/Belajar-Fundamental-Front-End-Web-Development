@@ -4,9 +4,9 @@
 ```js
 customElements.define(nama_tag, class_component, opsi);
 ```
-- `nama_tag` — string, wajib mengandung tanda hubung.
-- `class_component` — class yang extends `HTMLElement`.
-- `opsi` — object opsional, biasanya dipakai untuk **customized built-in element** (extend tag bawaan seperti `button`).
+- `nama_tag` string, wajib mengandung tanda hubung.
+- `class_component` class yang extends `HTMLElement`.
+- `opsi` object opsional, biasanya dipakai untuk **customized built-in element** (extend tag bawaan seperti `button`).
 
 ## Dua Cara Membuat Custom Element
 
@@ -64,4 +64,4 @@ customElements.define('user-card', UserCard);
 ## Poin Penting
 - Nama class boleh apa saja (PascalCase konvensinya), tapi nama tag di `define()` wajib huruf kecil dan mengandung tanda hubung.
 - Satu class hanya bisa didaftarkan ke **satu** nama tag.
-- Setelah `define()` dipanggil, semua tag dengan nama tersebut di HTML — bahkan yang sudah ada sebelum script dimuat — akan otomatis "di-upgrade" menjadi Custom Element.
+- Setelah `define()` dipanggil, semua tag dengan nama tersebut di HTML bahkan yang sudah ada sebelum script dimuat akan otomatis "di-upgrade" menjadi Custom Element.
