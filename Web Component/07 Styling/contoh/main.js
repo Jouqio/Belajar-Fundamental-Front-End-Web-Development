@@ -1,30 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<title>Styling Custom Element</title>
-<style>
-  body { font-family: sans-serif; padding: 20px; }
-  user-card {
-    display: block;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 16px;
-    max-width: 250px;
-    margin-bottom: 16px;
-  }
-  my-badge { --badge-color: orange; }
-</style>
-</head>
-<body>
-  <user-card name="Budi"></user-card>
-
-  <pretty-card></pretty-card>
-
-  <br>
-  <my-badge></my-badge>
-
-  <script>
     class UserCard extends HTMLElement {
       connectedCallback() {
         this.innerHTML = `<b>${this.getAttribute('name')}</b>`;
@@ -45,7 +18,7 @@
               max-width: 250px;
             }
           </style>
-          <div class="card">✨ Komponen Cantik ✨</div>
+          <div class="card">✨ Komponen Cool ✨</div>
         `;
       }
     }
@@ -67,6 +40,3 @@
       }
     }
     customElements.define('my-badge', MyBadge);
-  </script>
-</body>
-</html>

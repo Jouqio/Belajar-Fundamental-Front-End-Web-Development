@@ -1,0 +1,10 @@
+  body { font-family: sans-serif; padding: 20px; }
+  user-card {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 250px;
+    margin-bottom: 16px;
+  }
+  my-badge { --badge-color: orange; }
