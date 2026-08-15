@@ -63,7 +63,7 @@ this.shadowRoot.appendChild(template.content.cloneNode(true));
 - Bisa dipakai di framework apa pun.
 
 **Keterbatasan:**
-- Tidak ada built-in state management/reactivity secanggih React/Vue — perlu ditulis manual atau pakai library ringan seperti Lit.
+- Tidak ada built-in state management/reactivity secanggih React/Vue perlu ditulis manual atau pakai library ringan seperti Lit.
 - Server-Side Rendering (SSR) untuk Web Component murni masih lebih rumit dibanding framework modern.
 - Sedikit lebih verbose untuk komponen yang sangat kompleks dibanding framework dengan syntax deklaratif.
 
