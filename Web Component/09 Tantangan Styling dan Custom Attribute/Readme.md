@@ -73,4 +73,4 @@ document.querySelector('status-badge').setAttribute('status', 'nonaktif');
 Perhatikan badge langsung berubah warna dan teks tanpa reload!
 
 ## Yang Dilatih di Modul Ini
-- Menggabungkan `observedAttributes` + `attributeChangedCallback` + styling internal dalam satu komponen yang reaktif terhadap perubahan data — pondasi penting sebelum masuk ke Shadow DOM.
+- Menggabungkan `observedAttributes` + `attributeChangedCallback` + styling internal dalam satu komponen yang reaktif terhadap perubahan data pondasi penting sebelum masuk ke Shadow DOM.

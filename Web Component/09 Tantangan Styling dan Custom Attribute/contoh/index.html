@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Tantangan: Status Badge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Status Badge</h2>
+  <status-badge status="aktif" id="badge"></status-badge>
+  <status-badge status="pending"></status-badge>
+  <status-badge status="nonaktif"></status-badge>
+
+  <br>
+  <button onclick="document.getElementById('badge').setAttribute('status','nonaktif')">
+    Ubah badge pertama jadi Nonaktif
+  </button>
+
+<script src="main.js"></script>
+</body>
+</html>
