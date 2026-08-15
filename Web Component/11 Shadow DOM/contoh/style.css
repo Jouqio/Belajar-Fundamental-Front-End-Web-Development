@@ -1,0 +1,3 @@
+
+  body { font-family: sans-serif; padding: 20px; }
+  p { color: red; } /* CSS global ini TIDAK akan memengaruhi <p> di dalam Shadow DOM */

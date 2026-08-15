@@ -34,7 +34,7 @@ customElements.define('user-card', UserCard);
 ```
 
 ## Kenapa Shadow DOM Penting untuk Web Component?
-Tanpa Shadow DOM, Custom Element hanyalah "class JavaScript yang mengisi innerHTML" — style dan struktur tetap rawan bentrok. Dengan Shadow DOM, komponen benar-benar **encapsulated**, sesuai janji utama Web Component.
+Tanpa Shadow DOM, Custom Element hanyalah "class JavaScript yang mengisi innerHTML" style dan struktur tetap rawan bentrok. Dengan Shadow DOM, komponen benar-benar **encapsulated**, sesuai janji utama Web Component.
 
 ## Yang Akan Dipelajari Selanjutnya
 Modul 11-16 akan membahas detail cara pakai Shadow DOM: mode open vs closed, styling di dalamnya, hingga fitur Slot untuk menyisipkan konten dari luar.
