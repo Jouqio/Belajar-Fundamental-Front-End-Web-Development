@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Dia Adalah Shadow DOM</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  p { color: red; } /* CSS global ini TIDAK akan memengaruhi <p> di dalam Shadow DOM */
+</style>
+</head>
+<body>
+  <h2>Shadow DOM (mode: open)</h2>
+  <simple-box></simple-box>
+
+  <h2>Custom Element biasa (tanpa Shadow DOM)</h2>
+  <p>Paragraf ini di Light DOM, warnanya jadi merah karena CSS global.</p>
+
+  <script>
+    class SimpleBox extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+      }
+      connectedCallback() {
+        this.shadowRoot.innerHTML = `
+          <style>
+            p { color: blue; } /* hanya berlaku di dalam Shadow DOM ini */
+          </style>
+          <p>Saya di dalam Shadow DOM — tetap biru walau ada CSS global "p { color: red }".</p>
+        `;
+      }
+    }
+    customElements.define('simple-box', SimpleBox);
+
+    console.log('shadowRoot bisa diakses:', document.querySelector('simple-box').shadowRoot);
+  </script>
+</body>
+</html>

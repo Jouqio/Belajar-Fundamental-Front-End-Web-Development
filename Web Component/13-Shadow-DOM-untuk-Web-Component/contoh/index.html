@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Shadow DOM untuk Web Component</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; display: flex; gap: 12px; }
+  .card { border: 5px solid red; } /* sengaja beda untuk buktikan tidak bentrok */
+</style>
+</head>
+<body>
+  <profile-card name="Dewi" role="UI Designer"></profile-card>
+  <profile-card name="Fajar" role="Front-End Developer"></profile-card>
+
+  <script>
+    class ProfileCard extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+      }
+      static get observedAttributes() {
+        return ['name', 'role'];
+      }
+      attributeChangedCallback() {
+        this.render();
+      }
+      connectedCallback() {
+        this.render();
+      }
+      render() {
+        const name = this.getAttribute('name') || 'Tanpa Nama';
+        const role = this.getAttribute('role') || 'Anggota';
+        this.shadowRoot.innerHTML = `
+          <style>
+            .card {
+              border: 1px solid #ddd;
+              border-radius: 10px;
+              padding: 16px;
+              max-width: 220px;
+            }
+            .name { font-weight: bold; font-size: 16px; }
+            .role { color: #777; font-size: 14px; }
+          </style>
+          <div class="card">
+            <div class="name">${name}</div>
+            <div class="role">${role}</div>
+          </div>
+        `;
+      }
+    }
+    customElements.define('profile-card', ProfileCard);
+  </script>
+</body>
+</html>

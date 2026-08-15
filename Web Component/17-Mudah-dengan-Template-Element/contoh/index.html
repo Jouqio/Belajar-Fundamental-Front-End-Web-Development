@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Template Element</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+</style>
+</head>
+<body>
+  <h2>Template didefinisikan di HTML</h2>
+  <template id="card-template">
+    <style>
+      .card { border: 1px solid #ccc; padding: 12px; border-radius: 8px; max-width: 250px; margin-bottom: 10px; }
+    </style>
+    <div class="card"><slot></slot></div>
+  </template>
+
+  <my-card>Card pertama dari template HTML</my-card>
+  <my-card>Card kedua dari template yang sama</my-card>
+
+  <h2>Template dibuat via JavaScript</h2>
+  <js-card>Card dari template JS</js-card>
+
+  <script>
+    class MyCard extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        const template = document.getElementById('card-template');
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+      }
+    }
+    customElements.define('my-card', MyCard);
+
+    class JsCard extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        const template = document.createElement('template');
+        template.innerHTML = `
+          <style>.card { border: 1px solid #4c8bf5; padding: 12px; border-radius: 8px; max-width: 250px; }</style>
+          <div class="card"><slot></slot></div>
+        `;
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+      }
+    }
+    customElements.define('js-card', JsCard);
+  </script>
+</body>
+</html>

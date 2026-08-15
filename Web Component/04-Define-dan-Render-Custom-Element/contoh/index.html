@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Define dan Render Custom Element</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+</style>
+</head>
+<body>
+  <h2>Autonomous Custom Element</h2>
+  <my-badge></my-badge>
+
+  <h2>User Card dengan Atribut</h2>
+  <user-card name="Siti"></user-card>
+  <user-card name="Andi"></user-card>
+
+  <script>
+    class MyBadge extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `<span style="background:orange;padding:4px 8px;border-radius:4px;">Baru</span>`;
+      }
+    }
+    customElements.define('my-badge', MyBadge);
+
+    class UserCard extends HTMLElement {
+      connectedCallback() {
+        const nama = this.getAttribute('name') || 'Tanpa Nama';
+        this.innerHTML = `
+          <div style="border:1px solid #ccc; padding:10px; border-radius:6px; margin-bottom:8px; display:inline-block;">
+            <b>${nama}</b>
+          </div>
+        `;
+      }
+    }
+    customElements.define('user-card', UserCard);
+  </script>
+</body>
+</html>

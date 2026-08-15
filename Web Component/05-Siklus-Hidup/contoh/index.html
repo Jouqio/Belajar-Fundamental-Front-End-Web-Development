@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Siklus Hidup Custom Element</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  button { padding: 8px 16px; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <h2>Buka Console untuk melihat log siklus hidup</h2>
+  <div id="wrapper">
+    <lifecycle-demo></lifecycle-demo>
+  </div>
+  <button onclick="document.getElementById('wrapper').innerHTML=''">Hapus Elemen</button>
+
+  <script>
+    class LifecycleDemo extends HTMLElement {
+      constructor() {
+        super();
+        console.log('1. constructor dipanggil');
+      }
+      connectedCallback() {
+        console.log('2. connectedCallback: elemen masuk ke DOM');
+        this.innerHTML = '<p>Halo, saya elemen dengan siklus hidup!</p>';
+      }
+      disconnectedCallback() {
+        console.log('3. disconnectedCallback: elemen keluar dari DOM');
+      }
+    }
+    customElements.define('lifecycle-demo', LifecycleDemo);
+  </script>
+</body>
+</html>

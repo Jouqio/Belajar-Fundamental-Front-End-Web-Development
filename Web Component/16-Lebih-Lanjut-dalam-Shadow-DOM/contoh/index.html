@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Lebih Lanjut dalam Shadow DOM</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+</style>
+</head>
+<body>
+  <h2>:host dan :host([disabled])</h2>
+  <my-button>Tombol Aktif</my-button>
+  <my-button disabled>Tombol Disabled</my-button>
+
+  <h2>slotchange event (lihat console)</h2>
+  <slot-watcher>
+    <p>Item pertama</p>
+  </slot-watcher>
+
+  <h2>Adopted Stylesheet (berbagi CSS antar komponen)</h2>
+  <my-text></my-text>
+  <my-text></my-text>
+
+  <script>
+    class MyButton extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `
+          <style>
+            :host { display: inline-block; margin: 4px; }
+            :host([disabled]) { opacity: 0.5; pointer-events: none; }
+            button { padding: 8px 16px; }
+          </style>
+          <button><slot></slot></button>
+        `;
+      }
+    }
+    customElements.define('my-button', MyButton);
+
+    class SlotWatcher extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.innerHTML = `<div><slot></slot></div>`;
+      }
+      connectedCallback() {
+        this.shadowRoot.querySelector('slot').addEventListener('slotchange', (e) => {
+          console.log('slotchange terpicu, jumlah elemen:', e.target.assignedElements().length);
+        });
+      }
+    }
+    customElements.define('slot-watcher', SlotWatcher);
+
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(`p { color: teal; font-weight: bold; }`);
+
+    class MyText extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.adoptedStyleSheets = [sheet];
+        this.shadowRoot.innerHTML = `<p>Teks berwarna teal (berbagi stylesheet)</p>`;
+      }
+    }
+    customElements.define('my-text', MyText);
+  </script>
+</body>
+</html>

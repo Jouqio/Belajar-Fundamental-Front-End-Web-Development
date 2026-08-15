@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Tantangan: Status Badge</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  button { padding: 8px 16px; margin-top: 16px; }
+</style>
+</head>
+<body>
+  <h2>Status Badge</h2>
+  <status-badge status="aktif" id="badge"></status-badge>
+  <status-badge status="pending"></status-badge>
+  <status-badge status="nonaktif"></status-badge>
+
+  <br>
+  <button onclick="document.getElementById('badge').setAttribute('status','nonaktif')">
+    Ubah badge pertama jadi Nonaktif
+  </button>
+
+  <script>
+    class StatusBadge extends HTMLElement {
+      static get observedAttributes() {
+        return ['status'];
+      }
+      attributeChangedCallback() {
+        this.render();
+      }
+      connectedCallback() {
+        this.render();
+      }
+      render() {
+        const status = this.getAttribute('status') || 'pending';
+        const config = {
+          aktif:    { warna: '#4caf50', label: 'Aktif' },
+          nonaktif: { warna: '#f44336', label: 'Nonaktif' },
+          pending:  { warna: '#ff9800', label: 'Menunggu' }
+        };
+        const { warna, label } = config[status] || config.pending;
+        this.innerHTML = `
+          <style>
+            span {
+              background: ${warna};
+              color: white;
+              padding: 4px 12px;
+              border-radius: 12px;
+              font-size: 14px;
+            }
+          </style>
+          <span>${label}</span>
+        `;
+      }
+    }
+    customElements.define('status-badge', StatusBadge);
+  </script>
+</body>
+</html>

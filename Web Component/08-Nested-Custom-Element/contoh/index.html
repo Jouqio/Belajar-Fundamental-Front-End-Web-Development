@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Nested Custom Element</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  user-list, user-item { display: block; }
+  user-item { padding: 6px 0; border-bottom: 1px solid #eee; }
+</style>
+</head>
+<body>
+  <h2>Daftar User (Nested + Custom Event)</h2>
+  <user-list></user-list>
+  <p id="log"></p>
+
+  <script>
+    class UserItem extends HTMLElement {
+      connectedCallback() {
+        const nama = this.getAttribute('name');
+        this.innerHTML = `${nama} <button>Hapus</button>`;
+        this.querySelector('button').addEventListener('click', () => {
+          this.dispatchEvent(new CustomEvent('hapus-user', {
+            bubbles: true,
+            detail: { name: nama }
+          }));
+        });
+      }
+    }
+    customElements.define('user-item', UserItem);
+
+    class UserList extends HTMLElement {
+      connectedCallback() {
+        const data = ['Andi', 'Siti', 'Rudi'];
+        this.innerHTML = data
+          .map(nama => `<user-item name="${nama}"></user-item>`)
+          .join('');
+      }
+    }
+    customElements.define('user-list', UserList);
+
+    document.querySelector('user-list').addEventListener('hapus-user', (e) => {
+      document.getElementById('log').textContent = `Event diterima: hapus "${e.detail.name}"`;
+    });
+  </script>
+</body>
+</html>
