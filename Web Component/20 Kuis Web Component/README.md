@@ -18,14 +18,14 @@ Coba jawab dulu sebelum melihat kunci jawaban di bagian bawah.
 
 1. Nama tag wajib mengandung tanda hubung (`-`), contoh: `user-card`, `my-button`.
 2. Custom Elements, Shadow DOM, dan HTML Template.
-3. `super()` — wajib dipanggil sebelum kode lain di constructor.
+3. `super()`  wajib dipanggil sebelum kode lain di constructor.
 4. `disconnectedCallback()`.
 5. Mendaftarkan atribut mana saja yang ingin dipantau perubahannya, agar `attributeChangedCallback()` bisa terpicu.
 6. Mode `open` memungkinkan `shadowRoot` diakses dari luar (`element.shadowRoot`), sedangkan mode `closed` membuat `element.shadowRoot` bernilai `null` dari luar.
 7. `<slot>` berfungsi sebagai "lubang" di Shadow DOM yang otomatis diisi oleh konten Light DOM yang ditulis di antara tag pembuka-penutup komponen.
 8. Dengan memberi nama pada slot menggunakan atribut `name`, contoh `<slot name="judul"></slot>`, lalu elemen dari luar diberi atribut `slot="judul"` yang sesuai.
 9. `::slotted()`, contoh: `::slotted(img) { ... }`.
-10. Karena `template.content` adalah referensi tunggal — tanpa `cloneNode(true)`, konten akan "dipindahkan" (bukan disalin) ke instance komponen pertama saja, membuat instance berikutnya kosong.
+10. Karena `template.content` adalah referensi tunggal tanpa `cloneNode(true)`, konten akan "dipindahkan" (bukan disalin) ke instance komponen pertama saja, membuat instance berikutnya kosong.
 
 </details>
 
