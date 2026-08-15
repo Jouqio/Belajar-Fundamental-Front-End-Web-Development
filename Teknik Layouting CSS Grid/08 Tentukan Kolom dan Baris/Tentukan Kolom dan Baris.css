@@ -1,0 +1,25 @@
+  body { font-family: sans-serif; }
+  h4 { margin-top: 24px; }
+
+  .grid1 {
+    display: grid;
+    grid-template-columns: 100px 200px 1fr;
+    grid-template-rows: 80px auto 60px;
+    gap: 6px;
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 6px;
+  }
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+  .grid1 div, .grid2 div, .grid3 div {
+    background: #4c8bf5;
+    color: white;
+    padding: 14px;
+    text-align: center;
+  }

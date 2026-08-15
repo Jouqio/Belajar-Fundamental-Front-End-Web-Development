@@ -1,0 +1,21 @@
+  body { font-family: sans-serif; margin:0; }
+  .demo {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    justify-items: center;
+    align-items: center;
+    gap: 6px;
+    background: #eee;
+    padding: 10px;
+  }
+  .demo div { background: #4c8bf5; color: white; padding: 10px; }
+
+  .centered-box {
+    display: grid;
+    place-items: center;
+    height: 200px;
+    background: #333;
+    margin-top: 20px;
+  }
+  .centered-box div { background: #4caf50; color: white; padding: 20px; }

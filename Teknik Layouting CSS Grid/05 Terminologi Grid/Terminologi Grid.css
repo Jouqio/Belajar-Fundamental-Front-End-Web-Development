@@ -1,0 +1,15 @@
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 4px;
+    border: 2px solid #333;
+    width: max-content;
+  }
+  .container div {
+    background: #90caf9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #333;
+  }

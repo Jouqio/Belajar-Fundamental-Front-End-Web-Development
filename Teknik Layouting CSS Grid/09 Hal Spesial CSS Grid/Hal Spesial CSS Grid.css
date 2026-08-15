@@ -1,0 +1,19 @@
+  body { font-family: sans-serif; }
+  h4 { margin-top: 24px; }
+
+  .dense {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    gap: 6px;
+  }
+  .dense .besar { grid-column: span 2; grid-row: span 2; background: #ff8800; }
+  .dense div { background: #4c8bf5; color: white; padding: 14px; text-align: center; }
+
+  .named {
+    display: grid;
+    grid-template-columns: [start] 1fr [center] 1fr [end];
+    gap: 6px;
+  }
+  .named div { background: #4caf50; color: white; padding: 14px; text-align: center; }
+  .named .setengah { grid-column: start / center; background: #388e3c; }
