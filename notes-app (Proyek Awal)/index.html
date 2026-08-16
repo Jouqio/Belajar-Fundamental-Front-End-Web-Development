@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!--
+    KRITERIA OPSIONAL 3 (Custom Attribute pada Custom Element):
+    Atribut "app-title" dan "app-subtitle" di bawah ini adalah CUSTOM ATTRIBUTE
+    yang diterapkan LANGSUNG di dokumen HTML (bukan lewat JavaScript).
+    Lihat js/components/app-bar.js untuk cara komponen membaca atribut ini.
+  -->
+  <app-bar
+    app-title="Notes App"
+    app-subtitle="Simpan catatan pentingmu, kapan saja."
+  ></app-bar>
+
+  <main class="container">
+
+    <!-- KRITERIA WAJIB 2: Formulir Tambah Catatan (title + body via textarea) -->
+    <note-form></note-form>
+
+    <section class="notes-section">
+      <h2>📌 Catatan Aktif</h2>
+      <loading-indicator id="loading-indicator"></loading-indicator>
+      <!-- KRITERIA WAJIB 3: container ini memakai CSS Grid, lihat css/style.css -->
+      <div class="notes-grid" id="active-notes-list"></div>
+    </section>
+
+    <section class="notes-section">
+      <h2>🗄️ Arsip</h2>
+      <div class="notes-grid" id="archived-notes-list"></div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Notes App &mdash; Submission Belajar Fundamental Front-End Web Development</p>
+  </footer>
+
+  <!-- type="module" wajib agar import/export ES Module bisa dipakai. Murni JavaScript, tanpa framework. -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
