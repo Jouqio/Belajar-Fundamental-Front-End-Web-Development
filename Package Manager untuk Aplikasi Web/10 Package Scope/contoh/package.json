@@ -1,0 +1,12 @@
+{
+  "name": "contoh-package-scope",
+  "version": "1.0.0",
+  "description": "Contoh memasang package ber-scope (@babel/core)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9"
+  }
+}

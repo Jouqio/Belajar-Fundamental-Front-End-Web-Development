@@ -1,0 +1,15 @@
+{
+  "name": "contoh-package-json",
+  "version": "1.0.0",
+  "description": "Contoh package.json dengan dependencies dan devDependencies",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  }
+}

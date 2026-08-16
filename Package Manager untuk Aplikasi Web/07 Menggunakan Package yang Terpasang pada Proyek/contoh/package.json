@@ -1,0 +1,13 @@
+{
+  "name": "contoh-menggunakan-package",
+  "version": "1.0.0",
+  "description": "Contoh memakai dua package sekaligus: chalk dan dayjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dayjs": "^1.11.10"
+  }
+}

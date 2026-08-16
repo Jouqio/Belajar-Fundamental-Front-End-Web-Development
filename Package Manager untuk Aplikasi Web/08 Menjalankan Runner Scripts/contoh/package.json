@@ -1,0 +1,12 @@
+{
+  "name": "contoh-npm-scripts",
+  "version": "1.0.0",
+  "description": "Contoh berbagai npm scripts",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "greet": "echo Halo dari npm script!",
+    "info": "node -e \"console.log('Node.js versi:', process.version)\"",
+    "verify": "npm run greet && npm run info"
+  }
+}
