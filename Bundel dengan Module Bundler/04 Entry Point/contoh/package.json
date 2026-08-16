@@ -1,0 +1,13 @@
+{
+  "name": "contoh-04-entry-point",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contoh penggunaan Entry Point di Webpack",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

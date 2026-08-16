@@ -1,0 +1,12 @@
+body {
+  background-color: #1e1e2f;
+  color: #ffffff;
+  font-family: sans-serif;
+  text-align: center;
+  padding-top: 60px;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+}

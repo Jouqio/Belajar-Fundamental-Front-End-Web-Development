@@ -1,0 +1,13 @@
+{
+  "name": "contoh-10-webpack-config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contoh berkas konfigurasi webpack.config.js dasar",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

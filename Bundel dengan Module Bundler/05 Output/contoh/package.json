@@ -1,0 +1,13 @@
+{
+  "name": "contoh-05-output",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contoh konfigurasi Output di Webpack",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

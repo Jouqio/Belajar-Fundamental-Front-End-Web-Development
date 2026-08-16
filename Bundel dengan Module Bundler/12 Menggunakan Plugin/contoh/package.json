@@ -1,0 +1,14 @@
+{
+  "name": "contoh-12-menggunakan-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Contoh penggunaan HtmlWebpackPlugin",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "html-webpack-plugin": "^5.6.0"
+  }
+}
