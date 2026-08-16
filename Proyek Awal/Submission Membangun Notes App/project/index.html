@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header aplikasi, dibangun sebagai Web Component -->
+  <app-bar></app-bar>
+
+  <main class="container">
+
+    <!-- Form tambah catatan, dibangun sebagai Web Component -->
+    <note-form></note-form>
+
+    <section class="notes-section">
+      <h2>📌 Catatan Aktif</h2>
+      <loading-indicator id="loading-indicator"></loading-indicator>
+      <div class="notes-grid" id="active-notes-list"></div>
+    </section>
+
+    <section class="notes-section">
+      <h2>🗄️ Arsip</h2>
+      <div class="notes-grid" id="archived-notes-list"></div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Dibuat sebagai proyek latihan Belajar Fundamental Front-End Web Development</p>
+  </footer>
+
+  <!-- type="module" wajib agar import/export ES Module bisa dipakai -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

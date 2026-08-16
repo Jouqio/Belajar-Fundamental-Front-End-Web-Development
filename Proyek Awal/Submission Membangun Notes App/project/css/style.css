@@ -1,0 +1,62 @@
+/* ==========================================================
+   style.css
+   Style global untuk layout halaman.
+   Style internal tiap Web Component ditulis terpisah
+   di dalam Shadow DOM masing-masing komponen (lihat js/components/).
+   ========================================================== */
+
+:root {
+  --color-primary: #4c8bf5;
+  --color-primary-dark: #3a6fd1;
+  --color-danger: #f44336;
+  --color-text: #222;
+  --color-muted: #888;
+  --color-bg: #f5f6fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.notes-section {
+  margin-top: 32px;
+}
+
+.notes-section h2 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+/* Layout grid untuk daftar catatan — responsif otomatis
+   tanpa media query, memakai teknik dari materi CSS Grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.empty-text {
+  color: var(--color-muted);
+  font-style: italic;
+  grid-column: 1 / -1;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
