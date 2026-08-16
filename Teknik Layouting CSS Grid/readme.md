@@ -25,4 +25,4 @@ Setiap folder modul berisi:
 - `README.md` penjelasan konsep, kenapa penting, dan contoh kode
 - `contoh/index.html` file HTML+CSS siap dibuka di browser untuk latihan langsung
 
-Disarankan mengikuti modul secara berurutan dari 1 sampai 15.
+Disarankan mengikuti modul secara berurutan dari 1 sampai 15
