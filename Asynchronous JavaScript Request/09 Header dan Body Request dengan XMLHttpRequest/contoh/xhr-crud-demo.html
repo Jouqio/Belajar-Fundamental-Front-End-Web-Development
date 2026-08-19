@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>XHR: Header dan Body Request</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; max-width: 600px; }
+  button { padding: 8px 14px; margin: 4px 4px 4px 0; cursor: pointer; }
+  #log { margin-top: 16px; background: #f4f4f4; padding: 12px; border-radius: 8px; font-family: monospace; white-space: pre-wrap; min-height: 100px; }
+</style>
+</head>
+<body>
+  <h2>Demo Header &amp; Body Request (XHR)</h2>
+  <p>Pastikan server latihan sudah berjalan di <code>http://localhost:3000</code></p>
+
+  <button onclick="tambahBuku()">POST: Tambah Buku</button>
+  <button onclick="perbaruiBuku()">PUT: Update Buku id=1</button>
+  <button onclick="hapusBuku()">DELETE: Hapus Buku id=1</button>
+
+  <div id="log">Log akan tampil di sini...</div>
+
+  <script>
+    const BASE_URL = 'http://localhost:3000';
+    const logEl = document.getElementById('log');
+
+    function tulisLog(pesan) {
+      logEl.textContent += '\n' + pesan;
+    }
+
+    function tambahBuku() {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', `${BASE_URL}/books`);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.onload = function () {
+        const data = JSON.parse(xhr.responseText);
+        tulisLog(`[POST] Status ${xhr.status}: ${data.message}`);
+      };
+
+      const bukuBaru = {
+        title: 'Laut Bercerita',
+        author: 'Leila S. Chudori',
+        year: 2017,
+      };
+      xhr.send(JSON.stringify(bukuBaru));
+    }
+
+    function perbaruiBuku() {
+      const xhr = new XMLHttpRequest();
+      xhr.open('PUT', `${BASE_URL}/books/1`);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          tulisLog(`[PUT] Status ${xhr.status}: ${data.message}`);
+        } else {
+          tulisLog(`[PUT] Gagal, status ${xhr.status}`);
+        }
+      };
+
+      xhr.send(JSON.stringify({ finished: true }));
+    }
+
+    function hapusBuku() {
+      const xhr = new XMLHttpRequest();
+      xhr.open('DELETE', `${BASE_URL}/books/1`);
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          tulisLog(`[DELETE] Status ${xhr.status}: ${data.message}`);
+        } else {
+          tulisLog(`[DELETE] Gagal, status ${xhr.status}`);
+        }
+      };
+
+      xhr.send();
+    }
+  </script>
+</body>
+</html>

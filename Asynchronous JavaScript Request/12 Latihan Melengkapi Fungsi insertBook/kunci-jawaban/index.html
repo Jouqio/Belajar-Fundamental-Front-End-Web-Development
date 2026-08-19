@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Latihan: insertBook</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; max-width: 500px; }
+  input { padding: 8px; width: 100%; margin-bottom: 8px; box-sizing: border-box; }
+  button { padding: 8px 14px; cursor: pointer; }
+  #hasil { margin-top: 16px; padding: 12px; background: #f4f4f4; border-radius: 8px; min-height: 40px; }
+</style>
+</head>
+<body>
+  <h2>Latihan: Melengkapi Fungsi insertBook</h2>
+  <p>Lengkapi <code>book-api.js</code> terlebih dahulu, lalu coba tambah buku baru.</p>
+
+  <input type="text" id="title" placeholder="Judul buku">
+  <input type="text" id="author" placeholder="Penulis">
+  <input type="number" id="year" placeholder="Tahun terbit">
+  <button onclick="tambahBuku()">Tambah Buku</button>
+
+  <div id="hasil">Hasil akan tampil di sini...</div>
+
+  <script src="book-api.js"></script>
+  <script>
+    function tambahBuku() {
+      const book = {
+        title: document.getElementById('title').value,
+        author: document.getElementById('author').value,
+        year: Number(document.getElementById('year').value) || null,
+      };
+      const hasilEl = document.getElementById('hasil');
+      hasilEl.textContent = 'Mengirim...';
+
+      insertBook(book, (result) => {
+        if (result && !result.error) {
+          hasilEl.innerHTML = `✅ ${result.message}<br>id baru: <b>${result.book.id}</b>`;
+        } else {
+          hasilEl.textContent = '❌ ' + ((result && result.message) || 'Gagal menambah buku.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

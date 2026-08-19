@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Latihan: updateBook</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; max-width: 500px; }
+  input { padding: 8px; width: 100%; margin-bottom: 8px; box-sizing: border-box; }
+  label { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  button { padding: 8px 14px; cursor: pointer; }
+  #hasil { margin-top: 16px; padding: 12px; background: #f4f4f4; border-radius: 8px; min-height: 40px; }
+</style>
+</head>
+<body>
+  <h2>Latihan: Melengkapi Fungsi updateBook</h2>
+  <p>Lengkapi <code>book-api.js</code> terlebih dahulu, lalu coba perbarui buku yang sudah ada.</p>
+
+  <input type="text" id="book-id" placeholder="id buku (contoh: 1)">
+  <input type="text" id="title" placeholder="Judul baru (kosongkan jika tidak diubah)">
+  <label><input type="checkbox" id="finished"> Sudah selesai dibaca</label>
+  <button onclick="perbaruiBuku()">Perbarui Buku</button>
+
+  <div id="hasil">Hasil akan tampil di sini...</div>
+
+  <script src="book-api.js"></script>
+  <script>
+    function perbaruiBuku() {
+      const id = document.getElementById('book-id').value;
+      const title = document.getElementById('title').value;
+      const finished = document.getElementById('finished').checked;
+
+      const perubahan = { finished };
+      if (title) perubahan.title = title;
+
+      const hasilEl = document.getElementById('hasil');
+      hasilEl.textContent = 'Memperbarui...';
+
+      updateBook(id, perubahan, (result) => {
+        if (result && !result.error) {
+          hasilEl.innerHTML = `✅ ${result.message}<br><pre>${JSON.stringify(result.book, null, 2)}</pre>`;
+        } else {
+          hasilEl.textContent = '❌ ' + ((result && result.message) || 'Gagal memperbarui buku.');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

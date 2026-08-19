@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Fetch: Mengambil Daftar Buku</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; }
+  .book { border: 1px solid #ddd; border-radius: 8px; padding: 10px; margin-bottom: 8px; }
+  .status { font-weight: bold; }
+</style>
+</head>
+<body>
+  <h2>Daftar Buku (via Fetch API)</h2>
+  <p>Pastikan server latihan sudah berjalan di <code>http://localhost:3000</code></p>
+  <p class="status" id="status">Memuat data...</p>
+  <div id="hasil"></div>
+
+  <script>
+    const statusEl = document.getElementById('status');
+    const hasilEl = document.getElementById('hasil');
+
+    async function ambilDaftarBuku() {
+      try {
+        const response = await fetch('http://localhost:3000/books');
+
+        if (!response.ok) {
+          statusEl.textContent = `Request gagal dengan status: ${response.status}`;
+          return;
+        }
+
+        const data = await response.json();
+        statusEl.textContent = `Berhasil! Status: ${response.status}`;
+
+        data.books.forEach((book) => {
+          const div = document.createElement('div');
+          div.className = 'book';
+          div.innerHTML = `<b>${book.title}</b> oleh ${book.author} (${book.year})`;
+          hasilEl.appendChild(div);
+        });
+      } catch (error) {
+        statusEl.textContent = 'Terjadi kesalahan jaringan: ' + error.message;
+      }
+    }
+
+    console.log('1. Sebelum memanggil ambilDaftarBuku()');
+    ambilDaftarBuku();
+    console.log('2. Baris ini tercetak duluan -- fetch berjalan asynchronous');
+  </script>
+</body>
+</html>

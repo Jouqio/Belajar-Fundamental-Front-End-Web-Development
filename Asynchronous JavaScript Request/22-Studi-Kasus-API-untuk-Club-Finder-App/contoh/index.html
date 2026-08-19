@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Finder App</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f5fb;
+      color: #22223b;
+    }
+    header {
+      background: linear-gradient(135deg, #264653, #2a9d8f);
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 6px; }
+    header p { margin: 0; opacity: 0.9; font-size: 14px; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+    .search-box button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #2a9d8f;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .search-box button:hover { background: #21867a; }
+
+    #status { color: #888; font-size: 14px; margin-bottom: 12px; min-height: 20px; }
+
+    /* ===== CSS Grid untuk daftar klub, konsisten dengan materi CSS Grid ===== */
+    .club-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .club-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+      .container { padding: 16px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>⚽ Club Finder App</h1>
+    <p>Studi Kasus: Asynchronous JavaScript Request</p>
+  </header>
+
+  <main class="container">
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Cari nama klub, misalnya: garuda">
+      <button id="search-btn">Cari</button>
+    </div>
+
+    <p id="status">Memuat daftar klub...</p>
+
+    <!-- Setiap hasil dirender sebagai custom element <club-card> -->
+    <div class="club-grid" id="club-grid"></div>
+  </main>
+
+  <script src="club-card.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

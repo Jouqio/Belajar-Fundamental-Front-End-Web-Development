@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Refactor: getBook</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; max-width: 500px; }
+  input { padding: 8px; width: 100px; }
+  button { padding: 8px 14px; cursor: pointer; }
+  #hasil { margin-top: 16px; padding: 12px; background: #f4f4f4; border-radius: 8px; min-height: 60px; }
+</style>
+</head>
+<body>
+  <h2>Latihan: Refactor Fungsi getBook</h2>
+  <p>Lengkapi versi Fetch API di <code>book-api.js</code>, lalu coba cari buku (id: 1, 2, atau 3).</p>
+
+  <input type="text" id="book-id" placeholder="id buku">
+  <button onclick="cariBuku()">Cari Buku</button>
+
+  <div id="hasil">Hasil pencarian akan tampil di sini...</div>
+
+  <script src="book-api.js"></script>
+  <script>
+    async function cariBuku() {
+      const id = document.getElementById('book-id').value;
+      const hasilEl = document.getElementById('hasil');
+      hasilEl.textContent = 'Mencari...';
+
+      const result = await getBook(id);
+
+      if (result && !result.error) {
+        const book = result.book;
+        hasilEl.innerHTML = `<b>${book.title}</b><br>Penulis: ${book.author}<br>Tahun: ${book.year}`;
+      } else {
+        hasilEl.textContent = (result && result.message) || 'Buku tidak ditemukan.';
+      }
+    }
+  </script>
+</body>
+</html>

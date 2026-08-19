@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Fetch API Lebih Lanjut</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; max-width: 600px; }
+  button { padding: 8px 14px; margin: 4px 4px 4px 0; cursor: pointer; }
+  #log { margin-top: 16px; background: #f4f4f4; padding: 12px; border-radius: 8px; font-family: monospace; white-space: pre-wrap; min-height: 100px; }
+</style>
+</head>
+<body>
+  <h2>Demo Fetch API Lanjutan</h2>
+  <p>Pastikan server latihan sudah berjalan di <code>http://localhost:3000</code></p>
+
+  <button onclick="tambahBukuDemo()">POST: Tambah Buku</button>
+  <button onclick="ambilTigaBukuSekaligus()">Promise.all: Ambil 3 Buku Sekaligus</button>
+  <button onclick="cobaBukuTidakAda()">Coba Ambil Buku Id Tidak Ada (Error Handling)</button>
+
+  <div id="log">Log akan tampil di sini...</div>
+
+  <script>
+    const BASE_URL = 'http://localhost:3000';
+    const logEl = document.getElementById('log');
+
+    function tulisLog(pesan) {
+      logEl.textContent += '\n' + pesan;
+    }
+
+    async function tambahBukuDemo() {
+      const response = await fetch(`${BASE_URL}/books`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title: 'Cantik Itu Luka', author: 'Eka Kurniawan', year: 2002 }),
+      });
+      const data = await response.json();
+      tulisLog(`[POST] Status ${response.status}: ${data.message}`);
+    }
+
+    async function ambilTigaBukuSekaligus() {
+      tulisLog('[Promise.all] Mulai mengambil 3 buku secara paralel...');
+      const mulai = performance.now();
+
+      const hasil = await Promise.all([
+        fetch(`${BASE_URL}/books/1`).then((res) => res.json()),
+        fetch(`${BASE_URL}/books/2`).then((res) => res.json()),
+        fetch(`${BASE_URL}/books/3`).then((res) => res.json()),
+      ]);
+
+      const durasi = Math.round(performance.now() - mulai);
+      tulisLog(`[Promise.all] Selesai dalam ${durasi}ms. Judul: ${hasil.map((r) => r.book?.title || '(tidak ada)').join(', ')}`);
+    }
+
+    async function cobaBukuTidakAda() {
+      try {
+        const response = await fetch(`${BASE_URL}/books/id-yang-tidak-ada`);
+
+        if (!response.ok) {
+          throw new Error(`Buku tidak ditemukan (status ${response.status})`);
+        }
+
+        const data = await response.json();
+        tulisLog('Berhasil: ' + JSON.stringify(data));
+      } catch (error) {
+        tulisLog('[Error Handling] Berhasil menangkap error: ' + error.message);
+      }
+    }
+  </script>
+</body>
+</html>

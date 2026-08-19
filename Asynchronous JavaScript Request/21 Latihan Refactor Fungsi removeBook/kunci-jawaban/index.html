@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Refactor: removeBook</title>
+<style>
+  body { font-family: sans-serif; padding: 20px; max-width: 500px; }
+  input { padding: 8px; width: 150px; }
+  button { padding: 8px 14px; cursor: pointer; }
+  #hasil { margin-top: 16px; padding: 12px; background: #f4f4f4; border-radius: 8px; min-height: 40px; }
+</style>
+</head>
+<body>
+  <h2>Latihan: Refactor Fungsi removeBook</h2>
+  <p>Lengkapi versi Fetch API di <code>book-api.js</code>, lalu coba hapus buku.</p>
+
+  <input type="text" id="book-id" placeholder="id buku (contoh: 1)">
+  <button onclick="hapusBuku()">Hapus Buku</button>
+
+  <div id="hasil">Hasil akan tampil di sini...</div>
+
+  <script src="book-api.js"></script>
+  <script>
+    async function hapusBuku() {
+      const id = document.getElementById('book-id').value;
+      const hasilEl = document.getElementById('hasil');
+      hasilEl.textContent = 'Menghapus...';
+
+      const result = await removeBook(id);
+
+      if (result && !result.error) {
+        hasilEl.textContent = '✅ ' + result.message;
+      } else {
+        hasilEl.textContent = '❌ ' + ((result && result.message) || 'Gagal menghapus buku.');
+      }
+    }
+  </script>
+</body>
+</html>

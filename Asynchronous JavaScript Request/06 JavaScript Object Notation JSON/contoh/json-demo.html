@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Demo JSON.parse() dan JSON.stringify()</title>
+<style>
+  body { font-family: monospace; padding: 20px; background: #1e1e1e; color: #d4d4d4; }
+  h2 { color: #4ec9b0; }
+  pre { background: #252526; padding: 12px; border-radius: 6px; overflow-x: auto; }
+</style>
+</head>
+<body>
+  <h2>Buka Console (F12) untuk melihat hasilnya</h2>
+  <p>Halaman ini mendemonstrasikan JSON.parse() dan JSON.stringify().</p>
+
+  <script>
+    console.log('===== JSON.parse(): String JSON -> Object JavaScript =====');
+    const teksJson = '{"title": "Laskar Pelangi", "author": "Andrea Hirata", "year": 2005, "genre": ["Drama", "Pendidikan"]}';
+    console.log('Tipe data sebelum parse:', typeof teksJson);
+
+    const objekJs = JSON.parse(teksJson);
+    console.log('Tipe data setelah parse:', typeof objekJs);
+    console.log('Hasil parse:', objekJs);
+    console.log('Akses field title:', objekJs.title);
+    console.log('Akses field genre[0]:', objekJs.genre[0]);
+
+    console.log('\n===== JSON.stringify(): Object JavaScript -> String JSON =====');
+    const buku = {
+      title: 'Bumi Manusia',
+      author: 'Pramoedya Ananta Toer',
+      year: 1980,
+      finished: false,
+      rating: null,
+    };
+    console.log('Tipe data sebelum stringify:', typeof buku);
+
+    const hasilStringify = JSON.stringify(buku);
+    console.log('Tipe data setelah stringify:', typeof hasilStringify);
+    console.log('Hasil stringify:', hasilStringify);
+
+    console.log('\n===== JSON.stringify() dengan format rapi (indentasi) =====');
+    // Parameter kedua "null" dan ketiga "2" membuat hasilnya lebih mudah dibaca manusia
+    console.log(JSON.stringify(buku, null, 2));
+
+    console.log('\n===== Contoh Error Umum: JSON tidak valid =====');
+    try {
+      JSON.parse("{'title': 'Ini akan error'}"); // pakai kutip satu -> tidak valid
+    } catch (error) {
+      console.log('Terjadi error seperti dugaan:', error.message);
+    }
+  </script>
+</body>
+</html>
