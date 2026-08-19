@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🌐 Belajar Frontend Web
+#  Belajar Frontend Web
 
-### Kumpulan catatan, materi, dan proyek latihan Front-End Web Development — dari fundamental hingga siap membangun aplikasi nyata.
+### Kumpulan catatan, materi, dan proyek latihan Front-End Web Development dari fundamental hingga siap membangun aplikasi nyata.
 
 [![Status](https://img.shields.io/badge/status-actively%20learning-brightgreen?style=flat-square)](#)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](#)
@@ -15,30 +15,30 @@
 
 ---
 
-## 📖 Tentang Repository Ini
+##  Tentang Repository Ini
 
-Repository ini adalah **jurnal belajar sekaligus portofolio** selama menempuh jalur **Belajar Fundamental Front-End Web Development**. Setiap folder berisi materi yang dipelajari lengkap dengan catatan, contoh kode yang bisa langsung dijalankan, dan proyek latihan — disusun serapi mungkin agar bisa dipelajari ulang kapan saja, atau dijadikan referensi oleh siapa pun yang sedang belajar hal serupa.
+Repository ini adalah **jurnal belajar sekaligus portofolio** selama menempuh jalur **Belajar Fundamental Front-End Web Development**. Setiap folder berisi materi yang dipelajari lengkap dengan catatan, contoh kode yang bisa langsung dijalankan, dan proyek latihan disusun serapi mungkin agar bisa dipelajari ulang kapan saja, atau dijadikan referensi oleh siapa pun yang sedang belajar hal serupa.
 
 > 💡 Setiap folder modul punya `README.md` masing-masing yang menjelaskan materi secara detail beserta contoh kode. README ini hanya peta navigasi utamanya.
 
 ---
 
-## 🗂️ Daftar Modul Pembelajaran
+##  Daftar Modul Pembelajaran
 
 | # | Modul | Yang Dipelajari | Status |
 |---|---|---|:---:|
-| 1 | [🧱 Teknik Layouting CSS Grid](./Teknik-Layouting-CSS-Grid) | Sistem layout 2 dimensi dengan CSS Grid — dari dasar hingga studi kasus | ✅ |
-| 2 | [🧩 Web Component](./Web-Component) | Custom Elements, Shadow DOM, dan HTML Template untuk membangun komponen UI reusable | ✅ |
-| 3 | [📦 Package Manager untuk Aplikasi Web](./Package-Manager-untuk-Aplikasi-Web) | Mengelola dependency proyek dengan npm — install, scripts, versioning | ✅ |
-| 4 | [🚀 Proyek Awal](./Proyek-Awal) | Submission pertama: membangun **Notes App** dari nol | ✅ |
-| 5 | [📝 notes-app](./notes-app) | Implementasi final Notes App sesuai kriteria submission | ✅ |
-| 6 | [📝 HTML Form Lanjutan](./HTML-Form-Lanjutan) | Validasi form, tipe input modern, dan pengalaman pengguna yang lebih baik | ✅ |
-| 7 | [🔄 Asynchronous JavaScript Request](./Asynchronous-JavaScript-Request) | HTTP, CORS, JSON, XMLHttpRequest, hingga Fetch API — 24 modul lengkap | ✅ |
-| 8 | [📤 Bundel dengan Module Bundler](./Bundel-dengan-Module-Bundler) | Menggabungkan & mengoptimalkan kode dengan module bundler | ✅ |
+| 1 | [ Teknik Layouting CSS Grid](./Teknik-Layouting-CSS-Grid) | Sistem layout 2 dimensi dengan CSS Grid — dari dasar hingga studi kasus | ✅ |
+| 2 | [ Web Component](./Web-Component) | Custom Elements, Shadow DOM, dan HTML Template untuk membangun komponen UI reusable | ✅ |
+| 3 | [ Package Manager untuk Aplikasi Web](./Package-Manager-untuk-Aplikasi-Web) | Mengelola dependency proyek dengan npm — install, scripts, versioning | ✅ |
+| 4 | [ Proyek Awal](./Proyek-Awal) | Submission pertama: membangun **Notes App** dari nol | ✅ |
+| 5 | [ notes-app](./notes-app) | Implementasi final Notes App sesuai kriteria submission | ✅ |
+| 6 | [ HTML Form Lanjutan](./HTML-Form-Lanjutan) | Validasi form, tipe input modern, dan pengalaman pengguna yang lebih baik | ✅ |
+| 7 | [ Asynchronous JavaScript Request](./Asynchronous-JavaScript-Request) | HTTP, CORS, JSON, XMLHttpRequest, hingga Fetch API — 24 modul lengkap | ✅ |
+| 8 | [ Bundel dengan Module Bundler](./Bundel-dengan-Module-Bundler) | Menggabungkan & mengoptimalkan kode dengan module bundler | ✅ |
 
 ---
 
-## 📁 Struktur Folder
+##  Struktur Folder
 
 ```
 belajar-frontend-web/
@@ -62,7 +62,7 @@ belajar-frontend-web/
 
 ---
 
-## 🚀 Cara Menggunakan Repository Ini
+##  Cara Menggunakan Repository Ini
 
 1. **Clone repo ini**
    ```bash
@@ -75,7 +75,7 @@ belajar-frontend-web/
 
 ---
 
-## 🧰 Teknologi & Konsep yang Dipelajari
+##  Teknologi & Konsep yang Dipelajari
 
 <div align="left">
 
@@ -110,13 +110,13 @@ belajar-frontend-web/
 
 ---
 
-## 🤝 Catatan
+##  Catatan
 
 Repository ini dibuat untuk keperluan **belajar pribadi**. Kode di dalamnya boleh dijadikan referensi belajar, tetapi mohon **tidak disalin mentah-mentah** untuk keperluan submission/tugas serupa — silakan pahami konsepnya dan tulis ulang dengan pemahamanmu sendiri. 🙌
 
-## 📄 Lisensi
+##  Lisensi
 
-Proyek ini dilisensikan di bawah [MIT License](./LICENSE) — bebas digunakan untuk belajar dengan tetap mencantumkan atribusi.
+Proyek ini dilisensikan di bawah [MIT License](./LICENSE) bebas digunakan untuk belajar dengan tetap mencantumkan atribusi.
 
 ---
 
